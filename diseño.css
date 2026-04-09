@@ -9,14 +9,11 @@
     --fondo-secciones: #141414;
     --fondo-barra: #1a1a1a;
     --borde: #2a2a2a;
-
     --texto-principal: #e8e8e8;
     --texto-secundario: #a0a0a0;
-
     --azul: #4a7fa5;
     --azul-fondo: #1a2a38;
     --azul-borde: #2a3f52;
-
     --amarillo: #c8a84b;
     --amarillo-fondo: #2a2210;
     --amarillo-borde: #3d3118;
@@ -37,7 +34,6 @@ body {
 
 #barra-superior {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: sticky;
@@ -55,15 +51,12 @@ body {
 
 .menu {
     display: flex;
-    flex-direction: row;
     gap: 2rem;
 }
 
 .menu a {
     text-decoration: none;
     color: var(--texto-secundario);
-    display: flex;
-    align-items: center;
 }
 
 .menu a:hover {
@@ -83,92 +76,71 @@ body {
     cursor: pointer;
 }
 
-/* ── DECORATIVOS ── */
-
-.fondo-decorativo {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-}
+/* ── SECCIONES BASE ── */
 
 #sobre-mi, #conocimientos, #proyectos, #contacto {
     position: relative;
+    height: 100vh;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    scroll-margin-top: 2em;
 }
-
-#sobre-mi > div:not(.fondo-decorativo),
-#conocimientos > div:not(.fondo-decorativo),
-#proyectos > div:not(.fondo-decorativo),
-#contacto > div:not(.fondo-decorativo) {
-    position: relative;
-    z-index: 1;
-}
-
-.deco-circulo {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.08;
-}
-
-.c1 { width: 500px; height: 500px; background: var(--azul); top: -150px; right: -100px; }
-.c2 { width: 300px; height: 300px; background: var(--amarillo); bottom: -80px; left: -60px; }
-.c3 { width: 400px; height: 400px; background: var(--amarillo); top: -100px; left: -80px; }
-.c4 { width: 450px; height: 450px; background: var(--azul); bottom: -120px; right: -80px; }
-.c5 { width: 350px; height: 350px; background: var(--amarillo); top: -80px; right: -60px; }
-
-.deco-puntos {
-    position: absolute;
-    width: 180px;
-    height: 180px;
-    background-image: radial-gradient(circle, var(--azul) 1px, transparent 1px);
-    background-size: 18px 18px;
-    opacity: 0.2;
-}
-
-.p1 { top: 10%; left: 5%; }
-.p2 { bottom: 10%; right: 5%; }
-.p3 { top: 15%; right: 8%; }
-.p4 { bottom: 15%; left: 8%; }
-
-.deco-linea {
-    position: absolute;
-    height: 1px;
-    opacity: 0.12;
-    transform-origin: left center;
-}
-
-.l1 { width: 400px; background: var(--azul); top: 30%; left: 10%; transform: rotate(-25deg); }
-.l2 { width: 250px; background: var(--amarillo); bottom: 25%; right: 15%; transform: rotate(15deg); }
-.l3 { width: 350px; background: var(--amarillo); top: 20%; right: 10%; transform: rotate(20deg); }
-.l4 { width: 300px; background: var(--azul); top: 35%; left: 5%; transform: rotate(-15deg); }
-.l5 { width: 400px; background: var(--azul); bottom: 30%; left: 10%; transform: rotate(20deg); }
-.l6 { width: 200px; background: var(--amarillo); top: 20%; right: 20%; transform: rotate(-30deg); }
-
-.deco-cuadro {
-    position: absolute;
-    border-radius: 12px;
-    opacity: 0.06;
-}
-
-.cq1 { width: 200px; height: 200px; border: 2px solid var(--azul); bottom: 10%; left: 5%; transform: rotate(15deg); }
-.cq2 { width: 150px; height: 150px; border: 2px solid var(--amarillo); top: 10%; right: 5%; transform: rotate(-20deg); }
-
-/* ── SOBRE MI ── */
 
 #sobre-mi {
     background-color: var(--fondo-principal);
-    scroll-snap-align: start;
+    background-image:
+        radial-gradient(circle at 80% 20%, rgba(74, 127, 165, 0.08) 300px, transparent 300px),
+        radial-gradient(circle at 10% 80%, rgba(200, 168, 75, 0.08) 200px, transparent 200px),
+        radial-gradient(circle, rgba(74, 127, 165, 0.15) 1px, transparent 1px);
+    background-size: auto, auto, 24px 24px;
     scroll-margin-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    height: 100vh;
-    box-sizing: border-box;
 }
 
-#sobre-mi > div:not(.fondo-decorativo) {
+#conocimientos {
+    background-color: var(--fondo-secciones);
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(200, 168, 75, 0.08) 250px, transparent 250px),
+        radial-gradient(circle at 85% 80%, rgba(74, 127, 165, 0.06) 200px, transparent 200px),
+        radial-gradient(circle, rgba(200, 168, 75, 0.12) 1px, transparent 1px);
+    background-size: auto, auto, 24px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#proyectos {
+    background-color: var(--fondo-principal);
+    background-image:
+        radial-gradient(circle at 90% 80%, rgba(74, 127, 165, 0.08) 280px, transparent 280px),
+        radial-gradient(circle at 5% 20%, rgba(200, 168, 75, 0.06) 180px, transparent 180px),
+        radial-gradient(circle, rgba(74, 127, 165, 0.12) 1px, transparent 1px);
+    background-size: auto, auto, 24px 24px;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 2rem 2rem;
+}
+
+#contacto {
+    background-color: var(--fondo-secciones);
+    background-image:
+        radial-gradient(circle at 85% 15%, rgba(200, 168, 75, 0.08) 220px, transparent 220px),
+        radial-gradient(circle at 10% 85%, rgba(74, 127, 165, 0.06) 200px, transparent 200px),
+        radial-gradient(circle, rgba(200, 168, 75, 0.1) 1px, transparent 1px);
+    background-size: auto, auto, 24px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* ── SOBRE MI ── */
+
+#sobre-mi > div {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -195,18 +167,6 @@ body {
 }
 
 /* ── CONOCIMIENTOS ── */
-
-#conocimientos {
-    background-color: var(--fondo-secciones);
-    scroll-snap-align: start;
-    scroll-margin-top: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    height: 100vh;
-    box-sizing: border-box;
-}
 
 .conocimientos-contenido {
     display: flex;
@@ -269,18 +229,6 @@ body {
 }
 
 /* ── PROYECTOS ── */
-
-#proyectos {
-    background-color: var(--fondo-principal);
-    scroll-snap-align: start;
-    scroll-margin-top: 2em;
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-    padding-top: 1rem;
-    height: 100vh;
-    box-sizing: border-box;
-}
 
 .proyectos-contenido {
     display: flex;
@@ -386,18 +334,6 @@ body {
 
 /* ── CONTACTO ── */
 
-#contacto {
-    background-color: var(--fondo-secciones);
-    scroll-snap-align: start;
-    scroll-margin-top: 2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-    height: 100vh;
-    box-sizing: border-box;
-}
-
 .contacto-contenido {
     display: flex;
     flex-direction: column;
@@ -428,7 +364,6 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 .contacto-fila {
@@ -518,7 +453,6 @@ body {
 
     .conocimientos-contenido {
         gap: 1.5rem;
-        overflow-y: visible;
     }
 
     .conocimientos-cuadro {
@@ -543,5 +477,3 @@ body {
         word-break: break-all;
     }
 }
-
-

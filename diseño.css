@@ -546,4 +546,24 @@ body {
         width: 60px;
     }
     
+        html {
+        scroll-snap-type: none;
+    }
+
+    #sobre-mi, #conocimientos, #proyectos, #contacto {
+        height: auto;
+        min-height: 100vh;
+        scroll-snap-align: none;
+    }
+
+    #conocimientos {
+        padding: 5rem 1rem 2rem;
+        align-items: flex-start;
+    }
+
+    #sobre-mi, #proyectos, #contacto {
+        padding: 2rem 1rem;
+        align-items: center;
+    }
 }
+

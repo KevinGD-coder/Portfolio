@@ -497,8 +497,8 @@ body {
     }
 
     .conocimientos-contenido {
-        gap: 1rem;
-        overflow-y: auto;
+        gap: 1.5rem;
+        overflow-y: visible;
     }
 
     .conocimientos-cuadro {
